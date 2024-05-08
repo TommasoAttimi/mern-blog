@@ -78,18 +78,26 @@ export default function FooterComponent() {
             <Footer.Icon
               href="https://facebook.com/TommasoTadiello"
               icon={BsFacebook}
+              target="_blank"
+              rel="noopener noreferrer"
             />
             <Footer.Icon
               href="https://instagram.com/attimiph"
               icon={BsInstagram}
+              target="_blank"
+              rel="noopener noreferrer"
             />
             <Footer.Icon
               href="https://github.com/TommasoAttimi"
               icon={BsGithub}
+              target="_blank"
+              rel="noopener noreferrer"
             />
             <Footer.Icon
               href="https://linkedin.com/TommasoTadiello"
               icon={BsLinkedin}
+              target="_blank"
+              rel="noopener noreferrer"
             />
           </div>
         </div>
