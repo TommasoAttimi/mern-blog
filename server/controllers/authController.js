@@ -43,7 +43,7 @@ export const signin = async (req, res, next) => {
     });
 
     const { password: pass, ...rest } = validUser._doc;
-    //per separare la password dal resto cosi non viene mostarta nel log
+    //per separare la password dal resto cosi non viene mostrata nel log
 
     res
       .status(200)
