@@ -74,14 +74,14 @@ export const google = async (req, res, next) => {
       const hashedPassword = bcryptjs.hashSync(generatedPassword, 10);
       const newUser = new User({
         username:
-          name.toLowrCase().split(" ").join("") +
+          name.toLowerCase().split(" ").join("") +
           Math.random().toString(9).slice(-4),
         email,
         password: hashedPassword,
         profilePicture: googlePhotoUrl,
       });
       await newUser.save();
-      const token = jwt.sign({ UserId: user._id }, process.env.JWTSECRET);
+      const token = jwt.sign({ UserId: newUser._id }, process.env.JWT_SECRET);
       const { password, ...rest } = newUser._doc;
       res
         .status(200)
