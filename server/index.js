@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import userRoutes from "./routes/userRoute.js";
 import authRoutes from "./routes/authRoute.js";
+import postRoutes from "./routes/postRoute.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -26,6 +27,7 @@ app.listen(3000, () => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/post", postRoutes);
 
 //middleware to handle errors
 app.use((err, req, res, next) => {
