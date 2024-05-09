@@ -71,7 +71,7 @@ export default function Header() {
           >
             <Dropdown.Header>
               <span className="block text-sm">@{currentUser.username}</span>
-              <span className="block text-md truncate">
+              <span className="block text-md truncate mt-1">
                 {currentUser.email}
               </span>
             </Dropdown.Header>
