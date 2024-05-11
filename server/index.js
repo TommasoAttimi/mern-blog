@@ -21,22 +21,25 @@ mongoose
 const app = express();
 
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "/client/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cookieParser());
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes);
 app.use("/api/comment", commentRoutes);
+
+app.use(express.static(path.join(__dirname, "/client/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+});
 
 //middleware to handle errors
 app.use((err, req, res, next) => {
