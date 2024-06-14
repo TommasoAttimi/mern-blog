@@ -28,11 +28,12 @@ export default function App() {
         <Route path="/sign-up" element={<SignUp />}></Route>
         <Route path="/search" element={<Search />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/dashboard" element={<Dashboard />}></Route>{" "}
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+        </Route>
+        <Route element={<OnlyAdminPrivateRoute />}>
           <Route path="/create-post" element={<CreatePost />}></Route>
           <Route path="/edit-post/:postId" element={<EditPost />}></Route>
         </Route>
-        <Route element={<OnlyAdminPrivateRoute />}></Route>
         <Route path="/projects" element={<Projects />}></Route>
         <Route path="/post/:postSlug" element={<PostPage />}></Route>
       </Routes>

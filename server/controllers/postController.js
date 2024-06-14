@@ -80,7 +80,7 @@ export const deletePost = async (req, res, next) => {
 
 export const editPost = async (req, res, next) => {
   if (!req.user.isAdmin || req.user.id !== req.params.userId) {
-    return next(errorHandler(403, "You are not allowed to delte the post"));
+    return next(errorHandler(403, "You are not allowed to edit the post"));
   }
   try {
     const editedPost = await Post.findByIdAndUpdate(
